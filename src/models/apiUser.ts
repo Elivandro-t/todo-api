@@ -2,8 +2,9 @@ import {Model,DataTypes} from 'sequelize';
 import {sequelize} from '../instances/mysql';
 export interface apiconstances extends Model{
     id: number;
-    title:string;
-    done:boolean
+    user:string;
+    password:string
+    email:string
 }
 export const User = sequelize.define<apiconstances>("User",{
     id:{
@@ -11,11 +12,14 @@ export const User = sequelize.define<apiconstances>("User",{
         autoIncrement:true,
         type:DataTypes.INTEGER
     },
-    title:{
+    user:{
         type:DataTypes.STRING
     },
-    done:{
-        type:DataTypes.BOOLEAN
+    password:{
+        type:DataTypes.STRING
+    },
+    email:{
+        type:DataTypes.STRING
     }
 },
 {

@@ -4,3 +4,16 @@ npm install multer contem types
 manipulando imagens com a bibilhoteca sharp
 deletando imagens com a bibilhoteca fs do node
 import from "fs/promises"
+tipos de autenticação de usuarios 
+
+single-factor  Authentication = autenticação de un fotor
+two-factor Authentication = autenticação e 2 fatores.
+multi-factor-Authentication(MFA) = autenticação em multiplos fatores
+single sifn-On(sso)=autenticação unica "inivesal"
+
+proximo passo da autenticação
+basic Auth - BASE64
+OAuth(1 e 2);
+--OAuth = usar um terceiro para gerar um token;
+OAuth2 = OAuth+refreshtoken;
+JWT(json web token)

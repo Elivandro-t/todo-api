@@ -1,6 +1,7 @@
 import {Router} from 'express';
 import * as control from "../controls/costrolapi";
 import multer from "multer";
+import { auth } from "../midleware/auth";
 const up = multer.diskStorage({
     destination:(req,file,cb)=>{
         cb(null,"./tmp")
@@ -35,11 +36,11 @@ const router = Router();
 router.get("/todo",control.all)
 router.post("/create",control.add)
 router.put("/atualize/:id",control.updates)
-router.delete("/delet/:id",control.remove)
+router.delete("/delet/:id",auth.private,control.remove)
 router.post("/upload",upload.single("havatar")/*upload.array('havatar', 2)*/, control.aploadFiles);
-//router.delete("",)
-//router.put("",)
-//router.post("",)
+router.post("/registe",control.registe)
+router.post("/login",control.login)
+router.get("/list",auth.private,control.list)
 //router.post("",)
 //router.get("",)
 //router.get("",)
